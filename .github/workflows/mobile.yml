@@ -15,7 +15,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   Android:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -91,7 +91,7 @@ jobs:
           path: export/release/android/bin/app/build/outputs/apk/release/*.apk
           if-no-files-found: error
   iOS:
-    runs-on: macos-13
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -166,7 +166,7 @@ jobs:
            name: androidBuild
            path: /home/runner
       - name: Move Android File
-        run: mv /home/runner/YoshiCrafterEngine_Android.apk /home/runner/YoshiCrafterEngine_Android.apk
+        run: mv /home/runner/YoshiCrafterEngine_Android-release.apk /home/runner/YoshiCrafterEngine_Android.apk
       - name: Download iOS Build
         uses: actions/download-artifact@main
         with:
